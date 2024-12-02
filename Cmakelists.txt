@@ -20,3 +20,7 @@ add_executable(JeuDeLaVie ${SOURCES}
         Grille.cpp
         Grille.cpp
         grille.h)
+# Lier SFML
+set(SFML_DIR "C:/Users/coren/Downloads/SFML-2.6.2/lib/cmake/SFML")
+find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+target_link_libraries(JeuDeLaVie sfml-graphics sfml-window sfml-system)
