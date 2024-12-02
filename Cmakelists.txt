@@ -1,1 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(JeuDeLaVie)
 
+set(CMAKE_CXX_STANDARD 17)
+
+# Ajouter les fichiers source
+file(GLOB SOURCES src/*.cpp)
+
+# Créer l'exécutable principal
+add_executable(JeuDeLaVie ${SOURCES}
+        main.cpp
+        Cellule.cpp
+        Cellule.h
+        DisplayGraphique.cpp
+        Grille.cpp
+)
+
+# Lier SFML
+set(SFML_DIR "C:/Users/aleja/Librairies/SFML-2.6.2/lib/cmake/SFML")
+find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
+target_link_libraries(JeuDeLaVie sfml-graphics sfml-window sfml-system)
