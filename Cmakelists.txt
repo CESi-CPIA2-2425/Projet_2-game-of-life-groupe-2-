@@ -1,1 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+project(JeuDeLaVie)
 
+set(CMAKE_CXX_STANDARD 17)
+
+# Ajouter les fichiers source
+file(GLOB SOURCES src/*.cpp)
+
+# Créer l'exécutable principal
+add_executable(JeuDeLaVie ${SOURCES}
+        main.cpp
+        Cellule.cpp
+        Cellule.h
+        DisplayGraphique.cpp
+        Grille.cpp
+        DisplayGraphique.cpp
+        DisplayGraphique.h
+        Grille.cpp
+        Grille.cpp
+        Grille.cpp
+        Grille.cpp
+        grille.h)
