@@ -16,6 +16,24 @@ add_executable(JeuDeLaVie ${SOURCES}
 )
 
 # Lier SFML
-set(SFML_DIR "Mettre ici le chemin vers SFML")
+set(SFML_DIR "Mettre ici le chemin vers votre bibliotheque SFML")
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 target_link_libraries(JeuDeLaVie sfml-graphics sfml-window sfml-system)
+
+# Ajouter Google Test (chemins manuels)
+include_directories("Mettre ici le chemin vers le /include de votre bibliotheque google test")
+link_directories("Mettre ici le chemin vers le /lib de votre bibliotheque google test")
+
+# Ajouter un exécutable pour les tests
+add_executable(Tests
+        Cellule.cpp
+        Grille.cpp
+        tests.cpp
+)
+
+# Lier Google Test aux tests
+target_link_libraries(Tests gtest gtest_main)
+
+# Activer les tests
+enable_testing()
+add_test(NAME Tests COMMAND Tests)
